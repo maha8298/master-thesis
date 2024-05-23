@@ -1,3 +1,20 @@
+document.getElementById('uploadButton').addEventListener('click', async (e) => {
+    e.preventDefault();
+    const fileInput = document.getElementById('fileInput');
+    const file = fileInput.files[0];
+
+    if (file) {
+        const fileReader = new FileReader();
+        fileReader.onload = function (event) {
+            const functionDescription = event.target.result;
+            document.getElementById('functionDescInput').innerText = functionDescription;
+        };
+        fileReader.readAsText(file);
+    } else {
+        console.error('No file selected.');
+    }
+});
+
 document.getElementById('form').addEventListener('submit', async (e) => {
     e.preventDefault();
 

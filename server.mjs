@@ -22,11 +22,11 @@ async function generateTestCases(functionDescription) {
         const completion = await openai.chat.completions.create({
             model: "gpt-4",
             messages: [
-                { role: "system", content: "Generate test cases based on the given function description. Write five test cases in the specified programming language, use assert. Do not include any headers or comments, only pure code." },
+                { role: "system", content: "Generate a test function based on the given code, write only the function and do not add any comments. Test all possible scenarios, including all edge cases. Use the appropriate test-library based on the specified language such as pytest for python, JEST for JavaScript, NUnit för .NET etc." },
                 { role: "user", content: functionDescription },
             ],
             temperature: 0.5,
-            max_tokens: 256,
+            max_tokens: 500,
             top_p: 1,
             frequency_penalty: 0,
             presence_penalty: 0,
