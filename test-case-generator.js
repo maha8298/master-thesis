@@ -1,6 +1,22 @@
 import OpenAI from "openai";
+import readline from "readline";
 
 const openai = new OpenAI();
+
+function getUserInput(prompt) {
+    const rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout,
+    });
+
+    return new Promise((resolve) => {
+        rl.question(prompt, description => {
+            rl.close();
+            resolve(description);
+        });
+    });
+}
+
 
 async function generateTestCases(functionDescription) {
     try {
@@ -21,9 +37,12 @@ async function generateTestCases(functionDescription) {
 
 
 async function main() {
-    const functionDescription = "Function Name: addNumbers \n Description: This function takes two numbers as input and returns the sum of the two numbers. \n Parameters: \n - num1: A number to be added. \n - num2: A number to be added. \n Return Value: The sum of num1 and num2.";
+    const prompt = "Provide a function description that you want test cases for: "
+    const functionDescription = await getUserInput(prompt);
     const testCases = await generateTestCases(functionDescription);
     console.log("Generated test cases:", testCases);
 }
 
 main();
+
+/*Function Name: addNumbers \n Description: This function takes two numbers as input and returns the sum of the two numbers. \n Parameters: \n - num1: A number to be added. \n - num2: A number to be added. \n Return Value: The sum of num1 and num2.*/
