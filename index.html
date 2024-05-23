@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Test case generation</title>
+</head>
+
+<body>
+    <h1>Test Case Generator</h1>
+    <form id="form">
+        <div id="programmingLanguage" class="contentEditableDiv"
+            placeholder="Specify a programming language and test library to use" contentEditable=true></div>
+        <div id="fileUpload">
+            <input lang="en" type="file" id="fileInput">
+            <button id="uploadButton">Upload File</button>
+        </div>
+        <div style="text-align: center;">
+            <span id="textInBetween"> -- or -- </span>
+        </div>
+
+        <div id="functionDescInput" class="contentEditableDiv" placeholder="Enter function description..."
+            contentEditable=true></div>
+
+        <button type="submit" id="generateButton">Generate Test Cases</button>
+    </form>
+    <div id="loading">
+        Generating...
+    </div>
+    <div id="testCases" class="contentEditableDiv" placeholder="Generated test cases will appear here..."
+        contentEditable=true></div>
+
+
+    <script type="module" src="script.mjs"></script>
+
+</body>
+
+</html>

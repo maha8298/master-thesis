@@ -1,0 +1,33 @@
+{
+  "name": "streamline-runtime",
+  "description": "runtime for streamline.js",
+  "version": "3.0.0",
+  "license": "MIT",
+  "homepage": "http://github.com/Sage/streamline-runtime",
+  "author": {
+    "name": "Bruno Jouhier"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Sage/streamline-runtime.git"
+  },
+  "dependencies": {
+    "colors": "^1.4.0",
+    "regenerator-runtime": "^0.13.3"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-plugin-streamline": "^2.0.26",
+    "babel-preset-es2015": "^6.24.1"
+  },
+  "optionalDependencies": {
+    "fibers": "^5.0.0"
+  },
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/Sage/streamlinejs/issues"
+  },
+  "scripts": {
+    "prepublish": "node build.js || nodejs build.js"
+  }
+}
