@@ -26,5 +26,5 @@ This will start the server on http://localhost:3000.
 
 ## Example
 
-![image](Test-Case-JSexample.png)
+![image](images/Test-Case-JSexample.png)
 
