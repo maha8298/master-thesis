@@ -3,9 +3,11 @@
 This project is a simple one-page website that generates test cases for code snippets using the OpenAI API.
 
 ## Installation
-To start using the Test Case Generator, start by cloning the repository and nagivate to the project directory locally. Then install dependencies using 
+To start using the Test Case Generator, start by cloning the repository and nagivate to the project directory locally. 
 
-`npm install`
+Add the `.env` file (attached in an email from me) to the root of the project
+
+Then install dependencies using `npm install`
 
 Once the installation is complete, you can start the server using the following command:
 
